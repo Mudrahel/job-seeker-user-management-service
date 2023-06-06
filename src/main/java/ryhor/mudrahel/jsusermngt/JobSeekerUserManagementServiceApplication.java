@@ -1,4 +1,4 @@
-package ryhor.mudrahel.jobseekerusermanagementservice;
+package ryhor.mudrahel.jsusermngt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package ryhor.mudrahel.jobseekerusermanagementservice;
+package ryhor.mudrahel.jsusermngt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
