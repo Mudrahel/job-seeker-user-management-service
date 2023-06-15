@@ -1,6 +1,5 @@
 package ryhor.mudrahel.jsusermngt.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -36,24 +35,26 @@ public class UserClassicController {
         return "redirect:/users";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping({"/{id}","/?id={id}"})// good example of how to associate two urls
     public String getUser(Model model, @PathVariable("id") Long id) {
         System.out.println("mapped to getUser");
-        model.addAttribute("users", userService.getUserById(id));
-        return "users";
+        model.addAttribute("user", userService.getUserById(id));
+        return "user_view";
     }
 
     @GetMapping("/new")
     public String createUserForm(Model model) {
+        System.out.println("mapped to createUserForm");
         User user = new User();
         model.addAttribute("user", user);
-        return "create_user";
+        return "user_new";
     }
 
     @GetMapping("/edit/{id}")
     public String editUserForm(@PathVariable Long id, Model model) {
+        System.out.println("mapped to user editUserForm");
         model.addAttribute("user", userService.getUserById(id));
-        return "edit_user";
+        return "user_edit";
     }
 
     @PutMapping("/edit/{id}")
